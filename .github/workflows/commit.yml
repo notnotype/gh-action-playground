@@ -1,0 +1,19 @@
+name: Auto release
+
+on: push
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Modify
+        run: |
+          echo "Hello, World" >> hello
+      - name: Commit
+        run: |
+          git add .
+          git commit -m "update"
+      - name: "Push"
+        run: |
+          git push origin master
